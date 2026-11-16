@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المحطة الخامسة: مستقبل الطاقة النووية في السعودية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #070d19;
+      --bg-card: #0f172a;
+      --bg-elevated: #1e293b;
+      --border: #334155;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.25);
+      --cyan: #06b6d4;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --purple: #a855f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top right, #0d2137 0%, var(--bg-main) 55%);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+      padding-bottom: 40px;
+    }
+
+    header {
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--emerald-glow);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ffffff, #34d399, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 24px auto;
+      padding: 0 18px;
+    }
+
+    /* Navigation Tabs */
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .tab-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 14px 16px;
+      border-radius: 14px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--emerald);
+      color: var(--text-primary);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(6, 182, 212, 0.16));
+      border-color: var(--emerald);
+      color: #ffffff;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.18);
+    }
+
+    .section {
+      display: none;
+      animation: fadeIn 0.35s ease;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .card-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    /* Lab Controls */
+    .controls-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .controls-grid { grid-template-columns: 1fr; }
+      .tabs { grid-template-columns: 1fr; }
+    }
+
+    .control-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--cyan);
+      font-size: 0.95rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .choice-btn {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: 0.2s;
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    .choice-btn:hover {
+      border-color: var(--cyan);
+    }
+
+    .choice-btn.selected {
+      background: var(--cyan);
+      color: #04131c;
+      border-color: var(--cyan);
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+    }
+
+    .choice-btn.rad-alpha.selected { background: var(--amber); border-color: var(--amber); color: #1c1002; box-shadow: 0 0 12px rgba(245, 158, 11, 0.35); }
+    .choice-btn.rad-beta.selected { background: var(--cyan); border-color: var(--cyan); color: #04131c; box-shadow: 0 0 12px rgba(6, 182, 212, 0.35); }
+    .choice-btn.rad-gamma.selected { background: var(--purple); border-color: var(--purple); color: #ffffff; box-shadow: 0 0 12px rgba(168, 85, 247, 0.35); }
+
+    .quick-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .mini-pill-btn {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: var(--emerald);
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .mini-pill-btn:hover {
+      background: rgba(16, 185, 129, 0.25);
+    }
+
+    .mini-pill-btn.clear {
+      background: rgba(148, 163, 184, 0.1);
+      border-color: var(--border);
+      color: var(--text-secondary);
+    }
+
+    .mini-pill-btn.clear:hover {
+      color: #fff;
+      border-color: #94a3b8;
+    }
+
+    .canvas-wrapper {
+      background: #050914;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+    }
+
+    #shieldCanvas { height: 280px; }
+    #distCanvas { height: 205px; }
+    #gameCanvas { height: 255px; }
+
+    .status-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .status-bar { grid-template-columns: 1fr; }
+    }
+
+    .stat-box {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 12px;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
+    .stat-value {
+      font-size: 1.18rem;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+
+    .info-banner {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(16, 185, 129, 0.1);
+      border-right: 4px solid var(--emerald);
+      font-size: 0.95rem;
+    }
+
+    /* Distance Simulator */
+    .slider-container {
+      background: var(--bg-elevated);
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--emerald);
+      height: 8px;
+      cursor: pointer;
+      margin: 12px 0;
+    }
+
+    .sim-action-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .geiger-btn {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid var(--amber);
+      color: var(--amber);
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.2s;
+    }
+
+    .geiger-btn.on {
+      background: var(--amber);
+      color: #140d02;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+    }
+
+    .shield-room-btn {
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.2s;
+    }
+
+    .shield-room-btn.on {
+      background: var(--cyan);
+      color: #04131c;
+      box-shadow: 0 0 16px rgba(6, 182, 212, 0.45);
+    }
+
+    /* Game Section */
+    .game-controls-pad {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .pad-btn {
+      background: var(--bg-elevated);
+      border: 1px solid var(--cyan);
+      color: #fff;
+      width: 56px;
+      height: 48px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .pad-btn:active {
+      background: var(--cyan);
+      color: #000;
+    }
+
+    .action-btn {
+      background: linear-gradient(135deg, var(--emerald), #059669);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .quiz-option {
+      display: block;
+      width: 100%;
+      text-align: right;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 0.98rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .quiz-option:hover {
+      border-color: var(--emerald);
+      background: rgba(16, 185, 129, 0.08);
+    }
+
+    .quiz-option.correct {
+      background: rgba(16, 185, 129, 0.25);
+      border-color: var(--emerald);
+    }
+
+    .quiz-option.wrong {
+      background: rgba(239, 68, 68, 0.22);
+      border-color: var(--red);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <span class="badge">⚛️ المحطة الخامسة: الطاقة النووية في السعودية</span>
+      <h1>مستقبل الطاقة النووية في المملكة والتحديات المرتبطة بها</h1>
+    </div>
+    <div class="subtitle">مختبر تفاعلي للوقاية الإشعاعية وتحديات المستقبل</div>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('lab', this)">🛡️ مختبر الحواجز (α, β, γ)</button>
+    <button class="tab-btn" onclick="switchTab('distance', this)">📡 محاكي المسافة والجرعة</button>
+    <button class="tab-btn" onclick="switchTab('game', this)">🎮 لعبة وتحديات المستقبل</button>
+  </div>
+
+  <!-- TAB 1: SHIELDING LAB (MULTI-BARRIER) -->
+  <div id="tab-lab" class="section active">
+    <div class="card">
+      <div class="card-title">اختبار قدرة اختراق الإشعاعات ونظام الحواجز المتعددة</div>
+      <div class="card-desc">
+        يُعد <strong>عزل الإشعاع وإدارة النفايات النووية</strong> من أهم التحديات الهندسية لمشاريع الطاقة النووية المستقبلية. اختاري نوع الإشعاع ثم فعّلي حاجزاً واحداً أو <strong>ادمجِي عدة حواجز معاً</strong> لمشاهدة تأثيرها المتتابع:
+      </div>
+
+      <div class="controls-grid">
+        <div class="control-group">
+          <label>1. اختاري نوع الإشعاع المنبعث:</label>
+          <div class="btn-group">
+            <button class="choice-btn rad-alpha selected" onclick="setRad('alpha', this)">جسيمات ألفا (α)</button>
+            <button class="choice-btn rad-beta" onclick="setRad('beta', this)">جسيمات بيتا (β)</button>
+            <button class="choice-btn rad-gamma" onclick="setRad('gamma', this)">أشعة جاما (γ)</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>2. فعّلي الحواجز العازلة (يمكنكِ اختيار أكثر من حاجز معاً):</label>
+          <div class="btn-group" id="barrierButtons">
+            <button class="choice-btn" data-mat="paper" onclick="toggleBarrier('paper', this)">ورقة 📄</button>
+            <button class="choice-btn" data-mat="wood" onclick="toggleBarrier('wood', this)">لوح خشب 🪵</button>
+            <button class="choice-btn" data-mat="aluminum" onclick="toggleBarrier('aluminum', this)">ألمنيوم 🛡️</button>
+            <button class="choice-btn" data-mat="concrete" onclick="toggleBarrier('concrete', this)">خرسانة مسلحة 🧱</button>
+            <button class="choice-btn" data-mat="lead" onclick="toggleBarrier('lead', this)">رصاص سميك ⬛</button>
+          </div>
+          <div class="quick-actions">
+            <button class="mini-pill-btn" onclick="setAllBarriers(true)">✨ تفعيل جميع الحواجز معاً</button>
+            <button class="mini-pill-btn clear" onclick="setAllBarriers(false)">إزالة الكل</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="canvas-wrapper">
+        <canvas id="shieldCanvas"></canvas>
+      </div>
+
+      <div class="status-bar">
+        <div class="stat-box">
+          <div class="stat-label">نسبة نفاذ الإشعاع للجهة الأخرى</div>
+          <div class="stat-value" id="penetrationVal" style="color: var(--red);">100% (اختراق كامل)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">قراءة الكاشف الإشعاعي</div>
+          <div class="stat-value" id="detectorStatus" style="color: var(--red);">⚠️ مستوى مرتفع</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">التطبيق الهندسي في المفاعلات</div>
+          <div class="stat-value" id="engApp" style="font-size: 1rem; color: var(--cyan);">يتطلب تصميم حواجز متعددة</div>
+        </div>
+      </div>
+
+      <div class="info-banner" id="labExplanation">
+        <strong>التفسير الفيزيائي:</strong> جسيمات ألفا (α) هي نوى هيليوم ثقيلة ذات شحنة موجبة (+2)؛ ورغم قدرتها العالية على التأين داخل الجسم، إلا أن مدى اختراقها ضعيف جداً ويمكن إيقافها بورقة واحدة أو حتى بطبقة الجلد الخارجية.
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: DISTANCE SIMULATOR + LEAD PROTECTION ROOM -->
+  <div id="tab-distance" class="section">
+    <div class="card">
+      <div class="card-title">محاكي المسافة وقانون التربيع العكسي (تبديد المخاوف المجتمعية)</div>
+      <div class="card-desc">
+        من أبرز التحديات التي تواجه مستقبل الطاقة النووية عالمياً ومحلياً هو <strong>تخوف المجتمع من الإشعاع</strong>. حرّكي المؤشر لتري كيف تنخفض الجرعة الإشعاعية تربيعياً مع المسافة ($I \propto 1/d^2$)، أو فعّلي <strong>غرفة الحماية الرصاصية</strong> لعزل المهندس حتى في المناطق القريبة:
+      </div>
+
+      <div class="slider-container">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <span style="font-weight:800; font-size:1.08rem;">المسافة عن مصدر الإشعاع: <span id="distLabel" style="color:var(--emerald);">2 متر</span></span>
+          <div class="sim-action-btns">
+            <button class="shield-room-btn" id="roomToggle" onclick="toggleLeadRoom()">🛡️ تفعيل غرفة الحماية الرصاصية</button>
+            <button class="geiger-btn" id="geigerToggle" onclick="toggleGeiger()">🔊 تشغيل صوت عداد جايجر</button>
+          </div>
+        </div>
+        <input type="range" id="distSlider" min="1" max="20" value="2" oninput="updateDistance(this.value)" />
+        <div style="display:flex; justify-content:space-between; color:var(--text-secondary); font-size:0.85rem;">
+          <span>1 متر (منطقة قلب المفاعل)</span>
+          <span>10 متر</span>
+          <span>20 متر (خارج السياج الآمن)</span>
+        </div>
+      </div>
+
+      <div class="canvas-wrapper" style="margin-bottom: 18px;">
+        <canvas id="distCanvas"></canvas>
+      </div>
+
+      <div class="status-bar">
+        <div class="stat-box">
+          <div class="stat-label">معدل الجرعة الإشعاعية</div>
+          <div class="stat-value" id="doseRateVal" style="color: var(--red);">25.00 μSv/h</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">تصنيف المنطقة</div>
+          <div class="stat-value" id="zoneStatus" style="color: var(--red);">منطقة عالية الإشعاع (تتطلب دروعاً)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">المقارنة العلمية والبيئية</div>
+          <div class="stat-value" id="lifeCompare" style="font-size: 0.98rem; color: var(--cyan);">تعادل جرعة تصوير الصدر بالأشعة السينية (X-Ray)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: GAME & SAUDI NUCLEAR CHALLENGES -->
+  <div id="tab-game" class="section">
+    <!-- Part A: Interactive Radiation Escape Mini-Game -->
+    <div class="card">
+      <div class="card-title">المرحلة 1: تحدي المهندس النووي (تجنب الإشعاع والوصول لغرفة التحكم)</div>
+      <div class="card-desc">
+        استخدمي الأسهم (أو أزرار اللمس بالأسفل) لتحريك المهندس 👷 نحو <strong>غرفة التحكم الآمنة 🚪</strong> بأقل جرعة إشعاعية ممكنة، واستفيدي من الحواجز الرصاصية 🛡️ لحجب الأشعة!
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+        <div style="font-weight:800;">الجرعة التراكمية: <span id="gameDose" style="color:var(--emerald);">0.0 mSv</span> / 50 mSv</div>
+        <div style="font-weight:800; color:var(--cyan);" id="gameMsg">وصّلي المهندس للباب الأخضر!</div>
+        <button class="action-btn" style="padding:8px 16px; font-size:0.9rem;" onclick="resetMiniGame()">إعادة المحاولة 🔄</button>
+      </div>
+
+      <div class="canvas-wrapper">
+        <canvas id="gameCanvas"></canvas>
+      </div>
+
+      <div class="game-controls-pad">
+        <button class="pad-btn" onclick="movePlayer(0, -24)">⬆️</button>
+        <button class="pad-btn" onclick="movePlayer(-28, 0)">⬅️</button>
+        <button class="pad-btn" onclick="movePlayer(0, 24)">⬇️</button>
+        <button class="pad-btn" onclick="movePlayer(28, 0)">➡️</button>
+      </div>
+    </div>
+
+    <!-- Part B: Strategic Challenges Quiz -->
+    <div class="card">
+      <div class="card-title">المرحلة 2: قرارات مستقبل الطاقة النووية في السعودية</div>
+      <div class="card-desc">
+        اختبري قدرتك على حل أبرز 3 تحديات استراتيجية تواجه مشاريع الطاقة النووية المستقبلية في المملكة:
+      </div>
+
+      <div id="quizContainer"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // --- TAB SWITCHING ---
+  function switchTab(tabName, btn) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tabName).classList.add('active');
+    btn.classList.add('active');
+
+    if (tabName === 'lab') resizeShieldCanvas();
+    if (tabName === 'distance') resizeDistCanvas();
+    if (tabName === 'game') resizeGameCanvas();
+  }
+
+  // --- 1. MULTI-BARRIER SHIELDING LAB ---
+  let currentRad = 'alpha';
+  let particles = [];
+
+  const activeBarriers = {
+    paper: false,
+    wood: false,
+    aluminum: false,
+    concrete: false,
+    lead: false
+  };
+
+  const barrierOrder = ['paper', 'wood', 'aluminum', 'concrete', 'lead'];
+
+  const barrierTransmission = {
+    alpha: { paper: 0.00, wood: 0.00, aluminum: 0.00, concrete: 0.00, lead: 0.00 },
+    beta:  { paper: 0.85, wood: 0.12, aluminum: 0.00, concrete: 0.00, lead: 0.00 },
+    gamma: { paper: 0.98, wood: 0.90, aluminum: 0.78, concrete: 0.18, lead: 0.03 }
+  };
+
+  const radDetails = {
+    alpha: {
+      color: '#f59e0b',
+      radius: 6,
+      speed: 2.7,
+      text: 'جسيمات ألفا (α) ثقيلة وبطيئة نسبياً؛ تتوقف تماماً عند اصطدامها بأول حاجز حتى لو كان ورقة رقيقة، لكن خطورتها تكمن فقط إذا استُنشقت أو ابتُلعت.'
+    },
+    beta: {
+      color: '#06b6d4',
+      radius: 4.2,
+      speed: 4.5,
+      text: 'جسيمات بيتا (β) إلكترونات سريعة تخترق الورق بسهولة، ويُضعفها الخشب السميك بشكل كبير، بينما توقفها صفيحة الألمنيوم تماماً.'
+    },
+    gamma: {
+      color: '#c084fc',
+      radius: 3.2,
+      speed: 6.4,
+      text: 'أشعة جاما (γ) موجات كهرومغناطيسية عالية الطاقة تخترق الورق والخشب والألمنيوم، وتتطلب جدراناً متتالية من الخرسانة المسلحة والرصاص لامتصاصها بالكامل.'
+    }
+  };
+
+  const barrierStyles = {
+    paper:    { width: 6,  color: '#f8fafc', label: 'ورقة',   relPos: 0.70 },
+    wood:     { width: 16, color: '#b45309', label: 'خشب',    relPos: 0.60 },
+    aluminum: { width: 14, color: '#94a3b8', label: 'ألمنيوم', relPos: 0.50 },
+    concrete: { width: 30, color: '#64748b', label: 'خرسانة', relPos: 0.38 },
+    lead:     { width: 24, color: '#334155', label: 'رصاص',   relPos: 0.26 }
+  };
+
+  function setRad(type, btn) {
+    currentRad = type;
+    document.querySelectorAll('.rad-alpha, .rad-beta, .rad-gamma').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    particles = [];
+    updateLabReadout();
+  }
+
+  function toggleBarrier(mat, btn) {
+    activeBarriers[mat] = !activeBarriers[mat];
+    btn.classList.toggle('selected', activeBarriers[mat]);
+    particles = [];
+    updateLabReadout();
+  }
+
+  function setAllBarriers(state) {
+    barrierOrder.forEach(mat => {
+      activeBarriers[mat] = state;
+      const btn = document.querySelector(`#barrierButtons button[data-mat="${mat}"]`);
+      if (btn) btn.classList.toggle('selected', state);
+    });
+    particles = [];
+    updateLabReadout();
+  }
+
+  function getTotalPenetration() {
+    let survival = 1.0;
+    barrierOrder.forEach(mat => {
+      if (activeBarriers[mat]) {
+        survival *= barrierTransmission[currentRad][mat];
+      }
+    });
+    return Math.round(survival * 100);
+  }
+
+  function updateLabReadout() {
+    const pct = getTotalPenetration();
+    const penEl = document.getElementById('penetrationVal');
+    const detEl = document.getElementById('detectorStatus');
+    const engEl = document.getElementById('engApp');
+    const expEl = document.getElementById('labExplanation');
+    const anyActive = barrierOrder.some(m => activeBarriers[m]);
+
+    if (pct === 0) {
+      penEl.textContent = '0% (تم الحجب بالكامل)';
+      penEl.style.color = 'var(--emerald)';
+      detEl.textContent = '✅ آمن تماماً';
+      detEl.style.color = 'var(--emerald)';
+      engEl.textContent = 'عزل مثالي — تم إيقاف الإشعاع بنجاح';
+    } else if (pct <= 18) {
+      penEl.textContent = pct + '% (توهين شديد)';
+      penEl.style.color = 'var(--cyan)';
+      detEl.textContent = '🛡️ ضمن الحدود الآمنة';
+      detEl.style.color = 'var(--cyan)';
+      engEl.textContent = 'مستوى احتواء هندسي فعال للمفاعلات';
+    } else {
+      penEl.textContent = pct + '% (اختراق مرتفع)';
+      penEl.style.color = 'var(--red)';
+      detEl.textContent = '⚠️ خطر إشعاعي';
+      detEl.style.color = 'var(--red)';
+      engEl.textContent = anyActive ? 'حواجز غير كافية — أضيفي مواد أعلى كثافة' : 'بدون حواجز — يتطلب تصميم دروع عازلة';
+    }
+
+    expEl.innerHTML = '<strong>التفسير الفيزيائي:</strong> ' + radDetails[currentRad].text;
+  }
+
+  const shieldCanvas = document.getElementById('shieldCanvas');
+  const sCtx = shieldCanvas.getContext('2d');
+
+  function resizeShieldCanvas() {
+    shieldCanvas.width = shieldCanvas.parentElement.clientWidth;
+    shieldCanvas.height = 280;
+  }
+
+  function animateShieldLab() {
+    const w = shieldCanvas.width;
+    const h = shieldCanvas.height;
+    sCtx.clearRect(0, 0, w, h);
+
+    sCtx.strokeStyle = 'rgba(51, 65, 85, 0.25)';
+    sCtx.lineWidth = 1;
+    for (let x = 0; x < w; x += 30) {
+      sCtx.beginPath(); sCtx.moveTo(x, 0); sCtx.lineTo(x, h); sCtx.stroke();
+    }
+
+    const sourceX = w - 65;
+    const detectorX = 65;
+
+    sCtx.fillStyle = '#1e293b';
+    sCtx.strokeStyle = '#f59e0b';
+    sCtx.lineWidth = 2;
+    sCtx.beginPath();
+    sCtx.roundRect(sourceX - 24, h / 2 - 36, 52, 72, 10);
+    sCtx.fill();
+    sCtx.stroke();
+    sCtx.fillStyle = '#f8fafc';
+    sCtx.font = 'bold 13px Tajawal';
+    sCtx.textAlign = 'center';
+    sCtx.fillText('المصدر', sourceX + 2, h / 2 - 44);
+    sCtx.font = '22px sans-serif';
+    sCtx.fillText('☢️', sourceX + 2, h / 2 + 8);
+
+    const pct = getTotalPenetration();
+    sCtx.fillStyle = '#1e293b';
+    sCtx.strokeStyle = pct > 18 ? '#ef4444' : '#10b981';
+    sCtx.beginPath();
+    sCtx.roundRect(detectorX - 28, h / 2 - 40, 52, 80, 10);
+    sCtx.fill();
+    sCtx.stroke();
+    sCtx.fillStyle = '#f8fafc';
+    sCtx.font = 'bold 13px Tajawal';
+    sCtx.fillText('الكاشف', detectorX - 2, h / 2 - 48);
+    sCtx.font = '20px sans-serif';
+    sCtx.fillText(pct > 18 ? '🚨' : '📟', detectorX - 2, h / 2 + 7);
+
+    barrierOrder.forEach(mat => {
+      if (!activeBarriers[mat]) return;
+      const bStyle = barrierStyles[mat];
+      const bx = w * bStyle.relPos;
+      sCtx.fillStyle = bStyle.color;
+      sCtx.fillRect(bx - bStyle.width / 2, 38, bStyle.width, h - 76);
+      sCtx.strokeStyle = '#94a3b8';
+      sCtx.lineWidth = 1.2;
+      sCtx.strokeRect(bx - bStyle.width / 2, 38, bStyle.width, h - 76);
+      sCtx.fillStyle = '#e2e8f0';
+      sCtx.font = 'bold 12px Tajawal';
+      sCtx.fillText(bStyle.label, bx, 26);
+    });
+
+    if (Math.random() < 0.38) {
+      let stopAtX = null;
+      for (const mat of barrierOrder) {
+        if (activeBarriers[mat]) {
+          const passChance = barrierTransmission[currentRad][mat];
+          if (Math.random() >= passChance) {
+            const bStyle = barrierStyles[mat];
+            stopAtX = (w * bStyle.relPos) + (bStyle.width / 2) + 3;
+            break;
+          }
+        }
+      }
+
+      particles.push({
+        x: sourceX - 26,
+        y: h / 2 + (Math.random() - 0.5) * 46,
+        stopAtX: stopAtX,
+        blocked: false,
+        alpha: 1
+      });
+    }
+
+    const rInfo = radDetails[currentRad];
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      if (!p.blocked) {
+        p.x -= rInfo.speed;
+      } else {
+        p.alpha -= 0.09;
+      }
+
+      if (p.stopAtX !== null && p.x <= p.stopAtX) {
+        p.blocked = true;
+      }
+
+      sCtx.save();
+      sCtx.globalAlpha = Math.max(0, p.alpha);
+      sCtx.fillStyle = rInfo.color;
+      sCtx.shadowBlur = 10;
+      sCtx.shadowColor = rInfo.color;
+
+      if (currentRad === 'gamma') {
+        sCtx.beginPath();
+        sCtx.arc(p.x, p.y + Math.sin(p.x * 0.16) * 4, rInfo.radius, 0, Math.PI * 2);
+        sCtx.fill();
+      } else {
+        sCtx.beginPath();
+        sCtx.arc(p.x, p.y, rInfo.radius, 0, Math.PI * 2);
+        sCtx.fill();
+      }
+      sCtx.restore();
+
+      if (p.x < detectorX + 20 || p.alpha <= 0) {
+        particles.splice(i, 1);
+      }
+    }
+
+    requestAnimationFrame(animateShieldLab);
+  }
+
+  // --- 2. DISTANCE SIMULATOR + LEAD PROTECTION ROOM + GEIGER COUNTER ---
+  let geigerOn = false;
+  let leadRoomActive = false;
+  let audioCtx = null;
+  let geigerTimer = null;
+  let currentDist = 2;
+  let wavePhase = 0;
+
+  const distCanvas = document.getElementById('distCanvas');
+  const dCtx = distCanvas.getContext('2d');
+
+  function resizeDistCanvas() {
+    distCanvas.width = distCanvas.parentElement.clientWidth;
+    distCanvas.height = 205;
+  }
+
+  function toggleLeadRoom() {
+    leadRoomActive = !leadRoomActive;
+    const btn = document.getElementById('roomToggle');
+    if (leadRoomActive) {
+      btn.classList.add('on');
+      btn.textContent = '🛡️ إيقاف غرفة الحماية الرصاصية';
+    } else {
+      btn.classList.remove('on');
+      btn.textContent = '🛡️ تفعيل غرفة الحماية الرصاصية';
+    }
+    updateDistance(currentDist);
+  }
+
+  function updateDistance(val) {
+    currentDist = Number(val);
+    document.getElementById('distLabel').textContent = currentDist + ' متر';
+
+    // Inverse square law: I = I0 / d^2 (with I0 = 100 uSv/h at 1m)
+    // Lead room attenuates 98% of radiation (factor 0.02)
+    const rawDose = 100 / (currentDist * currentDist);
+    const effectiveDose = leadRoomActive ? (rawDose * 0.02) : rawDose;
+    const dose = effectiveDose.toFixed(2);
+
+    const doseEl = document.getElementById('doseRateVal');
+    const zoneEl = document.getElementById('zoneStatus');
+    const compEl = document.getElementById('lifeCompare');
+
+    doseEl.textContent = dose + ' μSv/h';
+
+    if (leadRoomActive) {
+      doseEl.style.color = 'var(--cyan)';
+      zoneEl.textContent = 'معزول داخل غرفة رصاصية (حجب 98%) 🛡️';
+      zoneEl.style.color = 'var(--cyan)';
+      compEl.textContent = 'آمن تماماً حتى بالقرب من قلب المفاعل بفضل الدرع الرصاصي';
+    } else if (currentDist <= 2) {
+      doseEl.style.color = 'var(--red)';
+      zoneEl.textContent = 'منطقة عالية الإشعاع (تتطلب دروعاً)';
+      zoneEl.style.color = 'var(--red)';
+      compEl.textContent = 'تعادل جرعة تصوير الصدر بالأشعة السينية (X-Ray)';
+    } else if (currentDist <= 6) {
+      doseEl.style.color = 'var(--amber)';
+      zoneEl.textContent = 'منطقة مراقبة هندسية';
+      zoneEl.style.color = 'var(--amber)';
+      compEl.textContent = 'تعادل الإشعاع الكوني أثناء رحلة طيران دولية ✈️';
+    } else {
+      doseEl.style.color = 'var(--emerald)';
+      zoneEl.textContent = 'آمن تماماً للعامة والبيئة';
+      zoneEl.style.color = 'var(--emerald)';
+      compEl.textContent = 'تعادل الإشعاع الطبيعي الخلفي من صخور الأرض والغلاف الجوي 🌍';
+    }
+  }
+
+  function animateDistanceVisual() {
+    const w = distCanvas.width;
+    const h = distCanvas.height;
+    dCtx.clearRect(0, 0, w, h);
+
+    const sourceX = w - 65;
+    const minWorkerX = 75;
+    const maxWorkerX = w - 135;
+    const centerY = h / 2 - 6;
+
+    const distRatio = (currentDist - 1) / 19;
+    const workerX = maxWorkerX - distRatio * (maxWorkerX - minWorkerX);
+
+    // Distance scale bar at bottom
+    dCtx.strokeStyle = 'rgba(148, 163, 184, 0.3)';
+    dCtx.lineWidth = 1;
+    dCtx.beginPath();
+    dCtx.moveTo(minWorkerX, h - 30);
+    dCtx.lineTo(maxWorkerX, h - 30);
+    dCtx.stroke();
+
+    [1, 5, 10, 15, 20].forEach(m => {
+      const ratio = (m - 1) / 19;
+      const mx = maxWorkerX - ratio * (maxWorkerX - minWorkerX);
+      dCtx.fillStyle = '#94a3b8';
+      dCtx.font = '11px Tajawal';
+      dCtx.textAlign = 'center';
+      dCtx.fillRect(mx - 1, h - 34, 2, 8);
+      dCtx.fillText(m + 'm', mx, h - 12);
+    });
+
+    // Expanding radiation waves from source
+    wavePhase = (wavePhase + 1.4) % 90;
+    const maxRadius = w - 100;
+    for (let r = wavePhase; r < maxRadius; r += 90) {
+      const waveX = sourceX - r;
+      if (leadRoomActive && waveX < workerX + 38) continue;
+
+      const norm = r / maxRadius;
+      const alpha = Math.max(0, (1 - norm) * (1 - norm) * 0.65);
+      dCtx.strokeStyle = `rgba(245, 158, 11, ${alpha})`;
+      dCtx.lineWidth = 2.5;
+      dCtx.beginPath();
+      dCtx.arc(sourceX, centerY, r, Math.PI * 0.65, Math.PI * 1.35);
+      dCtx.stroke();
+    }
+
+    // Glowing Reactor Core on Right
+    const coreGrad = dCtx.createRadialGradient(sourceX, centerY, 4, sourceX, centerY, 34);
+    coreGrad.addColorStop(0, '#fef08a');
+    coreGrad.addColorStop(0.5, '#f59e0b');
+    coreGrad.addColorStop(1, 'rgba(239, 68, 68, 0)');
+    dCtx.fillStyle = coreGrad;
+    dCtx.beginPath();
+    dCtx.arc(sourceX, centerY, 34, 0, Math.PI * 2);
+    dCtx.fill();
+
+    dCtx.font = '24px sans-serif';
+    dCtx.textAlign = 'center';
+    dCtx.fillText('☢️', sourceX, centerY + 8);
+    dCtx.fillStyle = '#f8fafc';
+    dCtx.font = 'bold 12px Tajawal';
+    dCtx.fillText('المفاعل', sourceX, centerY - 28);
+
+    const statusColor = leadRoomActive ? '#06b6d4' : (currentDist <= 2 ? '#ef4444' : (currentDist <= 6 ? '#f59e0b' : '#10b981'));
+
+    // Connecting dashed beam line
+    dCtx.save();
+    dCtx.setLineDash([5, 5]);
+    dCtx.strokeStyle = statusColor;
+    dCtx.lineWidth = 1.5;
+    dCtx.beginPath();
+    dCtx.moveTo(sourceX - 24, centerY);
+    dCtx.lineTo(leadRoomActive ? workerX + 42 : workerX + 24, centerY);
+    dCtx.stroke();
+    dCtx.restore();
+
+    // Draw Lead Protection Room Enclosure if active
+    if (leadRoomActive) {
+      dCtx.save();
+      dCtx.fillStyle = 'rgba(6, 182, 212, 0.14)';
+      dCtx.strokeStyle = '#94a3b8';
+      dCtx.lineWidth = 4;
+      dCtx.beginPath();
+      dCtx.roundRect(workerX - 36, centerY - 38, 72, 76, 12);
+      dCtx.fill();
+      dCtx.stroke();
+
+      dCtx.strokeStyle = '#06b6d4';
+      dCtx.lineWidth = 1.5;
+      dCtx.strokeRect(workerX - 31, centerY - 33, 62, 66);
+
+      dCtx.fillStyle = '#38bdf8';
+      dCtx.font = 'bold 11px Tajawal';
+      dCtx.fillText('غرفة رصاصية', workerX, centerY + 50);
+      dCtx.restore();
+    }
+
+    // Worker Aura Circle
+    dCtx.fillStyle = '#1e293b';
+    dCtx.strokeStyle = statusColor;
+    dCtx.lineWidth = 2.5;
+    dCtx.beginPath();
+    dCtx.arc(workerX, centerY, 23, 0, Math.PI * 2);
+    dCtx.fill();
+    dCtx.stroke();
+
+    dCtx.font = '23px sans-serif';
+    dCtx.fillText('👷', workerX, centerY + 8);
+
+    dCtx.fillStyle = statusColor;
+    dCtx.font = 'bold 13px Tajawal';
+    dCtx.fillText(currentDist + ' متر', workerX, centerY - (leadRoomActive ? 45 : 32));
+
+    requestAnimationFrame(animateDistanceVisual);
+  }
+
+  function unlockAudioContext() {
+    if (!audioCtx) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      audioCtx = new AudioContextClass();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    // Silent buffer unlock for iOS Safari
+    const buffer = audioCtx.createBuffer(1, 1, 22050);
+    const source = audioCtx.createBufferSource();
+    source.buffer = buffer;
+    source.connect(audioCtx.destination);
+    source.start(0);
+  }
+
+  function playClick() {
+    if (!audioCtx) unlockAudioContext();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(1050, audioCtx.currentTime);
+    gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.03);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.03);
+  }
+
+  function scheduleGeiger() {
+    if (!geigerOn) return;
+    playClick();
+    const effectiveDist = leadRoomActive ? Math.max(15, currentDist * 7) : currentDist;
+    const delay = Math.min(1300, Math.max(45, effectiveDist * effectiveDist * 14)) * (0.6 + Math.random() * 0.8);
+    geigerTimer = setTimeout(scheduleGeiger, delay);
+  }
+
+  function toggleGeiger() {
+    geigerOn = !geigerOn;
+    const btn = document.getElementById('geigerToggle');
+    if (geigerOn) {
+      unlockAudioContext();
+      btn.classList.add('on');
+      btn.textContent = '🔇 إيقاف صوت عداد جايجر';
+      scheduleGeiger();
+    } else {
+      btn.classList.remove('on');
+      btn.textContent = '🔊 تشغيل صوت عداد جايجر';
+      clearTimeout(geigerTimer);
+    }
+  }
+
+  // --- 3A. RADIATION ESCAPE MINI-GAME ---
+  const gameCanvas = document.getElementById('gameCanvas');
+  const gCtx = gameCanvas.getContext('2d');
+  let player = { x: 40, y: 125, r: 16 };
+  let doseAccumulated = 0;
+  let gameOver = false;
+  let gameWon = false;
+
+  const hazards = [
+    { x: 210, y: 72, radius: 68 },
+    { x: 410, y: 185, radius: 72 },
+    { x: 600, y: 85, radius: 68 }
+  ];
+
+  const shields = [
+    { x: 165, y: 138, w: 18, h: 75 },
+    { x: 365, y: 35, w: 18, h: 80 },
+    { x: 550, y: 140, w: 18, h: 75 }
+  ];
+
+  function resizeGameCanvas() {
+    gameCanvas.width = gameCanvas.parentElement.clientWidth;
+    gameCanvas.height = 255;
+  }
+
+  function resetMiniGame() {
+    player = { x: 40, y: 125, r: 16 };
+    doseAccumulated = 0;
+    gameOver = false;
+    gameWon = false;
+    document.getElementById('gameDose').textContent = '0.0 mSv';
+    document.getElementById('gameDose').style.color = 'var(--emerald)';
+    document.getElementById('gameMsg').textContent = 'وصّلي المهندس للباب الأخضر!';
+  }
+
+  function movePlayer(dx, dy) {
+    if (gameOver || gameWon) return;
+    const w = gameCanvas.width;
+    const h = gameCanvas.height;
+    const nextX = Math.max(22, Math.min(w - 22, player.x + dx));
+    const nextY = Math.max(22, Math.min(h - 22, player.y + dy));
+
+    const scaleX = w / 760;
+    let hitWall = false;
+    for (const s of shields) {
+      const sx = s.x * scaleX;
+      if (nextX + player.r > sx && nextX - player.r < sx + s.w &&
+          nextY + player.r > s.y && nextY - player.r < s.y + s.h) {
+        hitWall = true;
+        break;
+      }
+    }
+    if (!hitWall) {
+      player.x = nextX;
+      player.y = nextY;
+    }
+
+    if (player.x >= w - 55) {
+      gameWon = true;
+      document.getElementById('gameMsg').textContent = '🎉 أحسنتِ! وصلتِ لغرفة التحكم بأمان!';
+    }
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (!document.getElementById('tab-game').classList.contains('active')) return;
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+      e.preventDefault();
+      if (e.key === 'ArrowUp') movePlayer(0, -20);
+      if (e.key === 'ArrowDown') movePlayer(0, 20);
+      if (e.key === 'ArrowLeft') movePlayer(-24, 0);
+      if (e.key === 'ArrowRight') movePlayer(24, 0);
+    }
+  });
+
+  function gameLoop() {
+    const w = gameCanvas.width;
+    const h = gameCanvas.height;
+    gCtx.clearRect(0, 0, w, h);
+
+    gCtx.fillStyle = 'rgba(16, 185, 129, 0.25)';
+    gCtx.strokeStyle = '#10b981';
+    gCtx.lineWidth = 2;
+    gCtx.fillRect(w - 65, 25, 45, h - 50);
+    gCtx.strokeRect(w - 65, 25, 45, h - 50);
+    gCtx.font = '24px sans-serif';
+    gCtx.textAlign = 'center';
+    gCtx.fillText('🚪', w - 42, h / 2 + 8);
+
+    const scaleX = w / 760;
+    let inRadiation = false;
+
+    hazards.forEach(hz => {
+      const hx = hz.x * scaleX;
+      const grad = gCtx.createRadialGradient(hx, hz.y, 8, hx, hz.y, hz.radius);
+      grad.addColorStop(0, 'rgba(239, 68, 68, 0.55)');
+      grad.addColorStop(1, 'rgba(239, 68, 68, 0)');
+      gCtx.fillStyle = grad;
+      gCtx.beginPath();
+      gCtx.arc(hx, hz.y, hz.radius, 0, Math.PI * 2);
+      gCtx.fill();
+
+      gCtx.font = '18px sans-serif';
+      gCtx.fillText('☢️', hx, hz.y + 6);
+
+      const dist = Math.hypot(player.x - hx, player.y - hz.y);
+      if (dist < hz.radius) inRadiation = true;
+    });
+
+    shields.forEach(s => {
+      const sx = s.x * scaleX;
+      gCtx.fillStyle = '#475569';
+      gCtx.strokeStyle = '#94a3b8';
+      gCtx.fillRect(sx, s.y, s.w, s.h);
+      gCtx.strokeRect(sx, s.y, s.w, s.h);
+    });
+
+    if (inRadiation && !gameOver && !gameWon) {
+      doseAccumulated += 0.28;
+      const dEl = document.getElementById('gameDose');
+      dEl.textContent = doseAccumulated.toFixed(1) + ' mSv';
+      dEl.style.color = doseAccumulated > 30 ? 'var(--red)' : 'var(--amber)';
+
+      if (doseAccumulated >= 50) {
+        gameOver = true;
+        document.getElementById('gameMsg').textContent = '⚠️ تجاوزتِ الحد المسموح! اضغطي إعادة المحاولة.';
+      }
+    }
+
+    gCtx.font = '26px sans-serif';
+    gCtx.fillText('👷', player.x, player.y + 9);
+
+    requestAnimationFrame(gameLoop);
+  }
+
+  // --- 3B. STRATEGIC CHALLENGES QUIZ ---
+  const challenges = [
+    {
+      q: '1. تحدي تبريد المفاعلات في المناخ الصحراوي للمملكة وندرة المياه العذبة: ما الحل الهندسي الأنسب؟',
+      options: [
+        'الاعتماد الكلي على المياه الجوفية العذبة في وسط الصحراء',
+        'إنشاء المحطات النووية على السواحل لتحلية وتبريد المفاعلات أو استخدام المفاعلات المعيارية الصغيرة (SMRs)',
+        'إيقاف تشغيل المفاعلات طوال فصل الصيف لتقليل الحرارة'
+      ],
+      answer: 1,
+      feedback: 'صحيح! الموقع الساحلي يوفر مياه التبريد ويدعم تحلية المياه، كما توفر المفاعلات المعيارية الصغيرة (SMRs) مرونة عالية وكفاءة في استهلاك المياه.'
+    },
+    {
+      q: '2. تحدي توطين التقنية واستدامة الوقود النووي: كيف تعزز المملكة أمنها النووي مستقبلاً؟',
+      options: [
+        'استغلال احتياطي اليورانيوم المحلي وتطوير الكوادر الوطنية والبحث العلمي',
+        'الاستيراد الدائم للوقود والتشغيل الأجنبي دون نقل تقنية',
+        'الاكتفاء بمحطات تجريبية صغيرة غير متصلة بالشبكة'
+      ],
+      answer: 0,
+      feedback: 'ممتاز! تمتلك المملكة موارد واعدة من اليورانيوم وتعمل على تأهيل الكفاءات الوطنية لتوطين دورة الوقود النووي السلمي.'
+    },
+    {
+      q: '3. تحدي إدارة النفايات المشعة وكسب ثقة المجتمع: ما الإجراء المعتمد عالمياً لعزل النفايات عالية المستوى؟',
+      options: [
+        'تخزينها في مستودعات مفتوحة قريبة من المناطق السكنية',
+        'تطبيق نظام الحواجز المتعددة (الزجاج، الفولاذ، الرصاص) والمستودعات الجيولوجية العميقة المستقرة',
+        'رميها في البحار المفتوحة لتخفيف تركيزها'
+      ],
+      answer: 1,
+      feedback: 'أحسنتِ! تُعزل النفايات عبر حواجز هندسية متعددة وتُدفن في تكوينات جيولوجية عميقة ومستقرة تمنع تسرب أي إشعاع للبيئة.'
+    }
+  ];
+
+  function renderQuiz() {
+    const container = document.getElementById('quizContainer');
+    container.innerHTML = challenges.map((item, idx) => `
+      <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border);">
+        <div style="font-weight: 800; margin-bottom: 10px; color: #f8fafc;">${item.q}</div>
+        ${item.options.map((opt, oIdx) => `
+          <button class="quiz-option" onclick="checkQuiz(${idx}, ${oIdx}, this)">${opt}</button>
+        `).join('')}
+        <div id="q-fb-${idx}" style="font-size: 0.92rem; margin-top: 8px; color: var(--emerald); display: none;"></div>
+      </div>
+    `).join('');
+  }
+
+  function checkQuiz(qIdx, oIdx, btn) {
+    const parent = btn.parentElement;
+    const buttons = parent.querySelectorAll('.quiz-option');
+    buttons.forEach(b => b.disabled = true);
+
+    const isCorrect = oIdx === challenges[qIdx].answer;
+    if (isCorrect) {
+      btn.classList.add('correct');
+    } else {
+      btn.classList.add('wrong');
+      buttons[challenges[qIdx].answer].classList.add('correct');
+    }
+
+    const fb = document.getElementById('q-fb-' + qIdx);
+    fb.style.display = 'block';
+    fb.style.color = isCorrect ? 'var(--emerald)' : 'var(--amber)';
+    fb.textContent = (isCorrect ? '✅ ' : '💡 ') + challenges[qIdx].feedback;
+  }
+
+  window.addEventListener('resize', () => {
+    resizeShieldCanvas();
+    resizeDistCanvas();
+    resizeGameCanvas();
+  });
+
+  resizeShieldCanvas();
+  resizeDistCanvas();
+  resizeGameCanvas();
+  updateLabReadout();
+  updateDistance(2);
+  renderQuiz();
+  animateShieldLab();
+  animateDistanceVisual();
+  gameLoop();
+</script>
+</body>
+</html>
